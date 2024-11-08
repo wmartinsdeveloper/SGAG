@@ -1,0 +1,301 @@
+{% load static %}
+
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class='bx bxs-leaf'></i>
+            <span class="logo_name">SGAG</span>
+            <i class='bx bx-menu'></i>
+        </div>
+        <ul class="nav-link">
+            <li>
+                <a href="#">
+                    <i class='bx bxs-pie-chart-alt-2 bx-sm'></i>
+                    <span class="link_name">Dashboard</span>
+                </a>
+            </li>
+
+            <li>
+                <div class="icon-link">
+                    <a href="{% url 'cultura' %}">
+                        <i class='bx bxs-leaf bx-sm'></i>
+                        <span class="link_name">Cultura</span>
+                    </a>
+                </div>
+
+            </li>           
+
+            <li>
+                <div class="icon-link">
+                    <a href="#">
+                        <i class='bx bx-edit bx-sm'></i>
+                        <span class="link_name">Manejo</span>
+                    </a>
+                    <i class='bx bx-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a href="{% url 'manejo' %}">Cadastro</a></li>
+                    <li><a href="#">Atividades</a></li>
+                    <li><a href="#">Produtos</a></li>
+ 
+                </ul>
+            </li>
+
+            <li>
+                <div class="icon-link">
+                    <a href="#">
+                        <i class='bx bx-hive bx-sm'></i>
+                        <span class="link_name">Plantio</span>
+                    </a>
+                    <i class='bx bx-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Cadastro</a></li>
+                    <li><a href="#">Produção</a></li>
+  
+                </ul>
+            </li>
+
+            <li>
+                <div class="icon-link">
+                    <a href="#">
+                        <i class='bx bx-basket bx-sm'></i>
+                        <span class="link_name">Produto</span>
+                    </a>
+                    <i class='bx bx-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Cadastro</a></li>
+                    <li><a class="link_name" href="#">Preço</a></li>
+                    <li><a class="link_name" href="#">Categoria</a></li>
+  
+                </ul>
+            </li>
+
+            <li>
+                <div class="icon-link">
+                    <a href="#">
+                        <i class='bx bx-calendar bx-sm'></i>
+                        <span class="link_name">Atividade</span>
+                    </a>
+                    <i class='bx bx-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Cadastro</a> </li>
+                    <li><a class="link_name" href="#">Preço</a></li>    
+                </ul>
+            </li>
+
+            <li>
+                <div class="icon-link">
+                    <a href="#">
+                        <i class='bx bx-line-chart bx-sm'></i>
+                        <span class="link_name">Financeiro</span>
+                    </a>
+                    <i class='bx bx-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Vendas</a> </li>
+                    <li><a class="link_name" href="#">Compras</a></li>    
+                    <li><a class="link_name" href="#">Processamento</a></li>    
+                </ul>
+            </li>
+
+
+            <div class="profile-details">
+                <div class="profile-content">
+                    <img src="{% static 'cultura/img/profile.png' %}" alt="profile">
+                    <li>
+                        <div class="nome-job">
+                            <div class="profile_name">Prem</div>
+                            <div class="job">WebDesign</div>
+                        </div>
+                        <div>
+                            <i class='bx bx-log-out'></i>
+                        </div>
+                    </li>
+                </div>
+            </div>
+
+
+        </ul>
+
+    </div>
+  
+
+
+
+    <!--    
+    <div class="base-image"></div>
+    
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class='bx bxs-leaf'></i>
+            <span class="logo_name">SGAG</span>
+            <i class='bx bx-menu'></i>
+        </div>
+        <ul class="nav-link">
+            <li>
+                <a href="#">
+                    <i class='bx bxs-pie-chart-alt-2'></i>
+                    <span class="link_name">Dashboard</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="link_name">Cultura</span>
+                </a>
+            </li>           
+
+            <li>
+                <div class="icon-link">
+                    <a href="#">
+                        <i class='bx bx-collection'></i>
+                        <span class="link_name">Manejo</span>
+                    </a>
+                    <i class='bx bx-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Cadastro</a></li>
+                    <li><a href="#">Serviços</a></li>
+                    <li><a href="#">Produtos</a></li>
+ 
+                </ul>
+            </li>
+
+            <li>
+                <div class="icon-link">
+                    <a href="#">
+                        <i class='bx bx-book-alt'></i>
+                        <span class="link_name">Plantio</span>
+                    </a>
+                    <i class='bx bx-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Cadastro</a></li>
+                    <li><a href="#">Produção</a></li>
+  
+                </ul>
+            </li>
+
+            <li>
+                <div class="icon-link">
+                    <a href="#">
+                        <i class='bx bx-book-alt'></i>
+                        <span class="link_name">Produto</span>
+                    </a>
+                    <i class='bx bx-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Cadastro</a></li>
+                    <li><a class="link_name" href="#">Preço</a></li>
+                    <li><a class="link_name" href="#">Categoria</a></li>
+  
+                </ul>
+            </li>
+
+            <li>
+                <div class="icon-link">
+                    <a href="#">
+                        <i class='bx bx-calendar'></i>
+                        <span class="link_name">Atividade</span>
+                    </a>
+                    <i class='bx bx-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Cadastro</a> </li>
+                    <li><a class="link_name" href="#">Preço</a></li>    
+                </ul>
+            </li>
+
+            <li>
+                <div class="icon-link">
+                    <a href="#">
+                        <i class='bx bx-line-chart'></i>
+                        <span class="link_name">Financeiro</span>
+                    </a>
+                    <i class='bx bx-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Vendas</a> </li>
+                    <li><a class="link_name" href="#">Compras</a></li>    
+                </ul>
+            </li>
+
+
+
+
+
+
+            <li>
+                <a href="#">
+                    <i class='bx bxs-pie-chart-alt-2'></i>
+                    <span class="link_name">Produtos</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#">Serviço</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class='bx bx-line-chart'></i>
+                    <span class="link_name">Chart</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#">Chart</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class='bx bx-compass'></i>
+                    <span class="link_name">Explore</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#">Explore</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-calendar'></i>
+                    <span class="link_name">History</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#">History</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-cog'></i>
+                    <span class="link_name">Settings</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#">Settings</a></li>
+                </ul>
+            </li>
+
+
+
+            
+            <div class="profile-details">
+                <div class="profile-content">
+                    <img src="{% static 'cultura/img/profile.png' %}" alt="profile">
+                    <li>
+                        <div class="nome-job">
+                            <div class="profile_name">Prem</div>
+                            <div class="job">WebDesign</div>
+                        </div>
+                        <div>
+                            <i class='bx bx-log-out'></i>
+                        </div>
+                    </li>
+                </div>
+            </div>
+
+
+        </ul>
+
+    </div>
+ --> 

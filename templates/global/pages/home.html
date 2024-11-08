@@ -1,0 +1,15 @@
+{% load static %}
+{% include "global/partials/head.html" %}
+
+
+<body>
+    {% include "global/partials/sidebar.html" %}
+    <script type="text/javascript" src="{% static 'global/js/navibar.js' %}"></script>
+
+    {% block content %}
+    {% endblock content %}
+
+    {% include "global/partials/footer.html" %}
+</body>
+
+</html> 

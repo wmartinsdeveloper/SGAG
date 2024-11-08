@@ -1,0 +1,107 @@
+{% extends "global/pages/home.html" %}
+
+{% block content %}
+<div class="base">
+        <p class="form-header"> Cadastro da Cultura </p>
+        <form class="form" action="#" method="get" target="_blank" autocomplete="on">
+            <div>
+                <label for="cultura">Nome da Cultura:</label>
+                <input type="text" name="cultura" id="cultura" placeholder="Nome da Cultura" required />
+
+            </div>
+
+            <div>
+                <label for="CicloVida">Ciclo de Vida:</label>
+                <input type="number" name="CicloVida" id="CicloVida" placeholder="Ciclo de vida da Cultuta" />
+
+                <select name="UnidadeCicloVida">
+                    <option value="dia" selected>Dia</option>
+                    <option value="mes">Mês</option>
+                    <option value="ano">Ano</option>
+                </select>
+            </div>
+
+
+            <div>
+                <label for="InicioProducao">Inicio da Produção:</label>
+                <input type="number" name="InicioProducao" id="InicioProducao"
+                    placeholder="Tempo para o inicio da produção" required />
+
+                <select name="UnidadeInicioProducao">
+                    <option value="dia" selected>Dia</option>
+                    <option value="mes">Mês</option>
+                    <option value="ano">Ano</option>
+                </select>
+
+                <label for="CicloProducao">Ciclo de Produção:</label>
+                <input type="number" name="CicloProducao" id="InicioProducao"
+                    placeholder="Espaço de tempo de entre colheita" required />
+
+                <select name="UnidadeCicloProducao">
+                    <option value="dia" selected>Dia</option>
+                    <option value="mes">Mês</option>
+                    <option value="ano">Ano</option>
+                </select>
+            </div>
+
+
+            <div>
+                <label for="QuantidadeSafra">Quantidade de Safras:</label>
+                <input type="number" name="QuantidadeSafra" id="QuantidadeSafra" placeholder="Quantidade de safras"
+                    required />
+
+                <label for="IntervaloEntreSafra">Tempo Entressafra:</label>
+                <input type="number" name="IntervaloEntreSafra" id="IntervaloEntreSafra"
+                    placeholder="Intervalo entre safras" />
+                <select name="UnidadeIIntervaloEntreSafra">
+                    <option value="dia" selected>Dia</option>
+                    <option value="mes">Mês</option>
+                    <option value="ano">Ano</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="IntervaloColheita">Intervalo de Colheita:</label>
+                <input type="number" name="IntervaloColheita" id="IntervaloColheita"
+                    placeholder="Intervalo de colheitas" required />
+
+                <select name="UnidadeIntervaloColheita">
+                    <option value="dia" selected>Dia</option>
+                    <option value="mes">Mês</option>
+                    <option value="ano">Ano</option>
+                </select>
+                <label for="EmbalagemVenda">Embalagem de Venda:</label>
+                <input type="text" name="EmbalagemVenda" id="EmbalagemVenda" placeholder="Embalagem de venda"
+                    required />
+            </div>
+
+            <div>
+                <label for="PesoVenda">Peso de Venda:</label>
+                <input type="number" name="PesoVenda" id="PesoVenda" placeholder="Peso final do produto" required />
+
+                <select name="UnidadePeso">
+                    <option value="Grama" selected>Grama</option>
+                    <option value="Quilo">Quilo</option>
+                    <option value="Mililitro">Mililitro</option>
+                    <option value="Litro">LitrosAno</option>
+                    <option value="N/A">N/A</option>
+
+                </select>
+                <span class="checkbox">
+                    <input type="checkbox" name="SafraUnica" id="SafraUnica" required />
+                    <label for="SafraUnica">Safra única</label>
+                </span>
+            </div>
+
+            <div class="button-style">
+                <button>Salvar</button>
+                <button>Cancelar</button>
+            </div>
+
+                
+        </form>
+        
+        
+        
+    </div>
+    {% endblock content %}
