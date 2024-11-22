@@ -11,7 +11,7 @@ class UnidadeTempo:
 
 
 class cultura(models.Model):
-    cultura = models.TextField(primary_key=True)
+    cultura = models.CharField(primary_key=True,max_length=100,null=False, blank=False)
     ciclovida = models.IntegerField(default=0)
     unidadeciclovida = models.CharField(choices=UnidadeTempo().Tempo, default='Dia(s)',max_length=10)
     inicioproducao = models.IntegerField(default=0)
@@ -28,7 +28,14 @@ class cultura(models.Model):
     safraunica = models.BooleanField(default=False)   
      
     def __str__(self):
-        return self.nome
+        return cultura(self) 
+     
+    # def __str__(self):
+    #     # Obtém todos os campos do modelo
+    #     campos = [f"{key}: {value}" for key, value in self.__dict__.items() if not key.startswith('_')]
+    #     # Junta os campos em uma string
+    #     return ', '.join(campos)
+
     
     
 # #==============================================================================================================================================  

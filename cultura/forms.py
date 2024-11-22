@@ -12,24 +12,39 @@ UnidadeTempo = (
                     ("Ano(s)", "Ano(s)")
                 ) 
 
+def cultura_existis(nome_cultura):
+    if cultura.objects.filter(cultura=nome_cultura).exists():
+        raise ValidationError(
+            'O nome da cultura "%(value)s" já foi cadastrada.',
+            code='invalid',
+            params={'value': nome_cultura}
+            )
+
+
+
+
 class culturaform(forms.ModelForm):
         
     class Meta:
         model = cultura
         fields = '__all__' 
                 
-    cultura = forms. CharField(
+    cultura = forms.CharField (
             widget=forms.TextInput(
                                     attrs={
                                             'placeholder': 'ex.: Maracujá', 
-                                            'class': 'tex-input'
-                                            
+                                            'class': 'tex-input',
+                                            'required': True, 
+                                            # 'maxlength': 400,                                                                                
                                             }
                                     ),
             label='Nome da Cultura',
-            #help_text = ('Nome da cultura detalhada.'),
-            error_messages = {'required':'O nome da cultura precisa ser preenchido !',
-                              'invalid':'O nome da cultura já existe.'},
+            help_text = ('Nome da cultura detalhada.'),
+            error_messages = {'required':'O nome da cultura precisa ser preenchido !', },
+            required=True,
+            max_length=100,
+            min_length=5,
+            validators=[cultura_existis]
         )
     ciclovida = forms.IntegerField(
         widget=forms.NumberInput(
@@ -188,14 +203,64 @@ class culturaform(forms.ModelForm):
         )      
     
 
+
          
     def clean(self):
-        form_cleaned = super().clean()
-        if cultura.objects.filter(cultura=form_cleaned.get('cultura')).exists():
-            raise ValidationError(
-                'O nome %(value)s já existe',code='invalid',params={'value':form_cleaned.get('cultura')}
-            )
-        return form_cleaned
-        
+        form_cleaned = self.cleaned_data
 
+        # Aplica strip() a todos os campos do formulário
+        for key, value in form_cleaned.items():
+            if isinstance(value, str):  # Verifica se o valor é uma string
+                form_cleaned[key] = value.strip()  # Remove espaços em branco
+        return form_cleaned
+  
+  
+    #  Versão Final
+    #   def clean(self):
+    #     clutura_cleaned = self.cleaned_data.get('cultura','').strip()
+    #     if cultura.objects.filter(cultura=clutura_cleaned).exists():
+    #         raise ValidationError(
+    #             'O nome da cultura "%(value)s" já foi cadastrada.',
+    #             code='invalid',
+    #             params={'value': clutura_cleaned}
+    #             )
+    #     else:
+    #         form_cleaned = self.cleaned_data
+    
+    #         # Aplica strip() a todos os campos do formulário
+    #         for key, value in form_cleaned.items():
+    #             if isinstance(value, str):  # Verifica se o valor é uma string
+    #                 form_cleaned[key] = value.strip()  # Remove espaços em branco
+    #         return form_cleaned
+  
+  
+  
+  
+    # def clean_cultura(self):
+    #     form_cleaned = self.cleaned_data['cultura']
+    #     if cultura.objects.filter(cultura=form_cleaned).exists():
+    #         raise ValidationError(
+    #             'O nome da cultura "%(value)s" já foi cadastrada.',
+    #             code='invalid',
+    #             params={'value': form_cleaned.get('cultura')}
+    #             )
  
+    #     return form_cleaned
+    
+    
+        # def clean_cultura(self):
+        # clutura_cleaned = self.cleaned_data.get('cultura','').strip()
+        # if cultura.objects.filter(cultura=clutura_cleaned).exists():
+        #     raise ValidationError(
+        #         'O nome da cultura "%(value)s" já foi cadastrada.',
+        #         code='invalid',
+        #         params={'value': clutura_cleaned}
+        #         )
+        # else:
+        #     form_cleaned = self.cleaned_data
+    
+        #     # Aplica strip() a todos os campos do formulário
+        #     for key, value in form_cleaned.items():
+        #         if isinstance(value, str):  # Verifica se o valor é uma string
+        #             form_cleaned[key] = value.strip()  # Remove espaços em branco
+        #     return clutura_cleaned

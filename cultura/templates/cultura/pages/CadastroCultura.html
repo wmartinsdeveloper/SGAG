@@ -9,12 +9,21 @@
 
         {% csrf_token %} 
                 <div>
-                    <div class="herror-text">{{ form.cultura.errors }}</div>
-                    <label for="{{ form.cultura.name }}"> {{form.cultura.label}}:</label>                    
-                    <input type="text" name="{{ form.cultura.name }}" id="{{ form.cultura.name }}"  /> 
-                    <div class="help-text">{{ form.cultura.help_text  }}</div>
+                    {% if form.errors %}
+                        <div class="herror-text">{{ form.cultura.errors }}</div>
+                                                                           
+                    {% endif %}        
+                </div>
+
+                <div>
+                    <label for="{{ form.cultura.name }}"> {{ form.cultura.label }}:</label>                
+                    {{ form.cultura }}  
+                    
+                    {% comment %} <div class="help-text">{{ form.cultura.help_text  }}</div> {% endcomment %}
                 </div>
     
+ 
+
                 <div>
                     <label for="CicloVida">Ciclo de Vida:</label>
                     <input type="number" name="CicloVida" id="CicloVida" placeholder="Ciclo de vida da Cultuta" />
